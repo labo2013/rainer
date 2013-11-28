@@ -34,6 +34,7 @@ end
 
 group :development do
   gem 'guard'
+  gem 'guard-zeus'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

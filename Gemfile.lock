@@ -48,6 +48,9 @@ GEM
       lumberjack (~> 1.0)
       pry (>= 0.9.12)
       thor (>= 0.18.1)
+    guard-zeus (0.0.1)
+      guard
+      zeus
     hike (1.2.3)
     i18n (0.6.5)
     jbuilder (1.5.2)
@@ -129,6 +132,8 @@ GEM
     uglifier (2.3.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    zeus (0.13.3)
+      method_source (>= 0.6.7)
 
 PLATFORMS
   ruby
@@ -136,6 +141,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   guard
+  guard-zeus
   jbuilder (~> 1.2)
   jquery-rails
   rails (= 4.0.1)
