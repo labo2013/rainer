@@ -1,0 +1,29 @@
+<%= form_for(@soldier) do |f| %>
+  <% if @soldier.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@soldier.errors.count, "error") %> prohibited this soldier from being saved:</h2>
+
+      <ul>
+      <% @soldier.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :atk_points %><br>
+    <%= f.number_field :atk_points %>
+  </div>
+  <div class="field">
+    <%= f.label :def_points %><br>
+    <%= f.number_field :def_points %>
+  </div>
+  <div class="field">
+    <%= f.label :health %><br>
+    <%= f.number_field :health %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Atk points:</strong>
+  <%= @soldier.atk_points %>
+</p>
+
+<p>
+  <strong>Def points:</strong>
+  <%= @soldier.def_points %>
+</p>
+
+<p>
+  <strong>Health:</strong>
+  <%= @soldier.health %>
+</p>
+
+<%= link_to 'Edit', edit_soldier_path(@soldier) %> |
+<%= link_to 'Back', soldiers_path %>
