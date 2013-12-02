@@ -1,4 +1,4 @@
 json.array!(@soldiers) do |soldier|
-  json.extract! soldier, :atk_points, :def_points, :health
+  json.extract! soldier, :name, :life_points
   json.url soldier_url(soldier, format: :json)
 end

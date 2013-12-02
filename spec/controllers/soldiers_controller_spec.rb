@@ -23,7 +23,7 @@ describe SoldiersController do
   # This should return the minimal set of attributes required to create a valid
   # Soldier. As you add validations to Soldier, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "atk_points" => "1" } }
+  let(:valid_attributes) { { "name" => "MyString" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -85,14 +85,14 @@ describe SoldiersController do
       it "assigns a newly created but unsaved soldier as @soldier" do
         # Trigger the behavior that occurs when invalid params are submitted
         Soldier.any_instance.stub(:save).and_return(false)
-        post :create, {:soldier => { "atk_points" => "invalid value" }}, valid_session
+        post :create, {:soldier => { "name" => "invalid value" }}, valid_session
         assigns(:soldier).should be_a_new(Soldier)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Soldier.any_instance.stub(:save).and_return(false)
-        post :create, {:soldier => { "atk_points" => "invalid value" }}, valid_session
+        post :create, {:soldier => { "name" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -106,8 +106,8 @@ describe SoldiersController do
         # specifies that the Soldier created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Soldier.any_instance.should_receive(:update).with({ "atk_points" => "1" })
-        put :update, {:id => soldier.to_param, :soldier => { "atk_points" => "1" }}, valid_session
+        Soldier.any_instance.should_receive(:update).with({ "name" => "MyString" })
+        put :update, {:id => soldier.to_param, :soldier => { "name" => "MyString" }}, valid_session
       end
 
       it "assigns the requested soldier as @soldier" do
@@ -128,7 +128,7 @@ describe SoldiersController do
         soldier = Soldier.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Soldier.any_instance.stub(:save).and_return(false)
-        put :update, {:id => soldier.to_param, :soldier => { "atk_points" => "invalid value" }}, valid_session
+        put :update, {:id => soldier.to_param, :soldier => { "name" => "invalid value" }}, valid_session
         assigns(:soldier).should eq(soldier)
       end
 
@@ -136,7 +136,7 @@ describe SoldiersController do
         soldier = Soldier.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Soldier.any_instance.stub(:save).and_return(false)
-        put :update, {:id => soldier.to_param, :soldier => { "atk_points" => "invalid value" }}, valid_session
+        put :update, {:id => soldier.to_param, :soldier => { "name" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end

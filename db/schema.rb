@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128221353) do
+ActiveRecord::Schema.define(version: 20131202024210) do
 
   create_table "soldiers", force: true do |t|
-    t.integer  "atk_points"
-    t.integer  "def_points"
-    t.integer  "health"
+    t.string   "name"
+    t.integer  "life_points"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

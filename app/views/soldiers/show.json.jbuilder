@@ -1,1 +1,1 @@
-json.extract! @soldier, :atk_points, :def_points, :health, :created_at, :updated_at
+json.extract! @soldier, :name, :life_points, :created_at, :updated_at

@@ -3,9 +3,8 @@ require 'spec_helper'
 describe "soldiers/edit" do
   before(:each) do
     @soldier = assign(:soldier, stub_model(Soldier,
-      :atk_points => 1,
-      :def_points => 1,
-      :health => 1
+      :name => "MyString",
+      :life_points => 1
     ))
   end
 
@@ -14,9 +13,8 @@ describe "soldiers/edit" do
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form[action=?][method=?]", soldier_path(@soldier), "post" do
-      assert_select "input#soldier_atk_points[name=?]", "soldier[atk_points]"
-      assert_select "input#soldier_def_points[name=?]", "soldier[def_points]"
-      assert_select "input#soldier_health[name=?]", "soldier[health]"
+      assert_select "input#soldier_name[name=?]", "soldier[name]"
+      assert_select "input#soldier_life_points[name=?]", "soldier[life_points]"
     end
   end
 end

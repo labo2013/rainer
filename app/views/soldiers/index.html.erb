@@ -3,9 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Atk points</th>
-      <th>Def points</th>
-      <th>Health</th>
+      <th>Name</th>
+      <th>Life points</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,9 +14,8 @@
   <tbody>
     <% @soldiers.each do |soldier| %>
       <tr>
-        <td><%= soldier.atk_points %></td>
-        <td><%= soldier.def_points %></td>
-        <td><%= soldier.health %></td>
+        <td><%= soldier.name %></td>
+        <td><%= soldier.life_points %></td>
         <td><%= link_to 'Show', soldier %></td>
         <td><%= link_to 'Edit', edit_soldier_path(soldier) %></td>
         <td><%= link_to 'Destroy', soldier, method: :delete, data: { confirm: 'Are you sure?' } %></td>

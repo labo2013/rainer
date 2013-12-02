@@ -69,6 +69,6 @@ class SoldiersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def soldier_params
-      params.require(:soldier).permit(:atk_points, :def_points, :health)
+      params.require(:soldier).permit(:name, :life_points)
     end
 end
