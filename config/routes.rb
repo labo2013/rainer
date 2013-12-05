@@ -1,12 +1,14 @@
 Rainer::Application.routes.draw do
   # get "welcome/index"
-  resources :soldiers
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+
+  get '/farm/upgrade' => 'welcome#farm_upgrade'
+
+  get '/farm/add' => 'welcome#farm_add'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

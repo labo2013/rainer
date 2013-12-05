@@ -11,13 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131202024210) do
+ActiveRecord::Schema.define(version: 20131205155804) do
 
-  create_table "soldiers", force: true do |t|
-    t.string   "name"
-    t.integer  "life_points"
+  create_table "farms", force: true do |t|
+    t.integer  "level"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "soldiers", force: true do |t|
+    t.integer  "atk_points"
+    t.integer  "def_points"
+    t.integer  "health"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.integer  "cereales"
+    t.integer  "farms_id"
+    t.integer  "soldiers_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["farms_id"], name: "index_users_on_farms_id"
+  add_index "users", ["soldiers_id"], name: "index_users_on_soldiers_id"
 
 end

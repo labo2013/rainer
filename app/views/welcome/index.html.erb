@@ -1,2 +1,29 @@
-<h1>Welcome!!</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<h1>Rainer</h1>
+
+<h3>User: <%=@user.name%></h3>
+
+<h4>Cantidad de soldados: <%=@user.soldiers.length%></h4>
+
+
+<h3>Granjas</h3>
+
+<h4>Cereales acumulados: <%=@user.cereales%></h4>
+<h4>Cantidad de granjas: <%=@user.farms.length%></h4>
+
+<!-- <%= button_to "Agregar granja", farm_add_path, :class => "button", :method => :get  %> -->
+
+<% if (not @user.farms.empty?) %>
+<table border="a">
+  <tr>
+    <th>#</th><th>Produccion/min</th>
+  </tr>
+
+  <% @user.farms.each do | farm | %>
+  <tr>
+    <td><%= (@user.farms.index farm) + 1 %></td>
+    <td><%= farm.production %></td>
+    <!-- <td><%= button_to "Upgrade", farm_upgrade_path, :class => "button", :method => :get  %></td> -->
+  </tr>
+  <% end %>
+</table>
+<% end %>
